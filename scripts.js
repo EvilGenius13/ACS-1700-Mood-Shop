@@ -37,7 +37,8 @@ for (let i = 0; i < data.length; i += 1) {
 }
 
 const cart = []
-
+// --------------------------------------------------
+// Add Item
 function addItem(name, price) {
 	for (let i = 0; i <cart.length; i++) {
 		if (cart[i].name === name) {
@@ -49,6 +50,7 @@ function addItem(name, price) {
 	const item = {name, price, qty: 1}
 	cart.push(item)
 }
+// ---------------------------------------------------
 // Show Items with variable added (const qty = getQty())
 function showItems(item) {
 	const qty = getQty()
@@ -61,6 +63,8 @@ function showItems(item) {
 	// show item without variable added
 	console.log(`Total in cart: $${getTotal()}`)
 }
+
+// -----------------------------------------------------
 // Get Quantity 
 function getQty() {
 	let qty = 0
@@ -69,6 +73,8 @@ function getQty() {
 	}
 	return qty
 }
+
+// ------------------------------------------------------
 // Get Total
 function getTotal() {
 	let total = 0
@@ -76,6 +82,22 @@ function getTotal() {
 		total += cart[i].price * cart[i].qty
 	}
 	return total.toFixed(2)
+}
+// -------------------------------------------------------
+// Remove Item
+function removeItem(name, qty = 0) {
+	for (let i = 0; i < cart.length; i++) {
+		if (cart[i].name === name) {
+			if (qty > 0) {
+				cart[i].qty -= qty
+			}
+			
+			if (cart[i].qty < 1 || qty === 0) {
+				cart.splice(i, 1)
+			}
+			return
+		}
+	}
 }
 
 addItem('Apple', 0.99)
@@ -85,4 +107,9 @@ addItem('Raspberry', 1.25)
 addItem('Apple', 0.99)
 addItem('Apple', 0.99)
 addItem('Orange', 1.29)
+showItems()
+
+removeItem('Apple', 1)
+removeItem('Cucumber')
+removeItem('Orange', 2)
 showItems()
