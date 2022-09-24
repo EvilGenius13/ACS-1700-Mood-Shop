@@ -38,18 +38,51 @@ for (let i = 0; i < data.length; i += 1) {
 
 const cart = []
 
-
 function addItem(name, price) {
-	const item = {name: name, price: price, qty: 1}
+	for (let i = 0; i <cart.length; i++) {
+		if (cart[i].name === name) {
+			cart[i].qty += 1
+			return
+		}
+	}
+	
+	const item = {name, price, qty: 1}
 	cart.push(item)
 }
-
+// Show Items with variable added (const qty = getQty())
 function showItems(item) {
-	console.log(`you have ${cart.length} items in your cart.`)
+	const qty = getQty()
+	console.log(`you have ${qty} items in your cart.`)
+	
+	for (let i = 0; i < cart.length; i+= 1) {
+		console.log(`- ${cart[i].name} $${cart[i].price} x ${cart[i].qty}`)
+	}
+
+	// show item without variable added
+	console.log(`Total in cart: $${getTotal()}`)
+}
+// Get Quantity 
+function getQty() {
+	let qty = 0
+	for (let i = 0; i<cart.length; i++) {
+		qty += cart[i].qty
+	}
+	return qty
+}
+// Get Total
+function getTotal() {
+	let total = 0
+	for (let i = 0; i < cart.length; i++) {
+		total += cart[i].price * cart[i].qty
+	}
+	return total.toFixed(2)
 }
 
 addItem('Apple', 0.99)
 addItem('Orange', 1.29)
 addItem('Cucumber', 2.00)
 addItem('Raspberry', 1.25)
+addItem('Apple', 0.99)
+addItem('Apple', 0.99)
+addItem('Orange', 1.29)
 showItems()
