@@ -3,13 +3,17 @@ body {
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
+    background-color: #337def;
   }
 
 .page-header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-    background-color: bisque;
+  background-color: #fcc729;
+  color: #337def;
+  padding-left: 50px;
+  font-size: 16px;
 }
 
 .page-header ul {
@@ -17,12 +21,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+    color: #337def;
+    font-size: 18px;
+    margin-right: 10px;
   }
 
 .page-header a {
     display: block;
     padding:0.5em;
     text-decoration:none;
+    color:#337def;
   }
 
   .items {
@@ -32,6 +40,9 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1em;
+    background-color: #fcc729;
+    color: #337def;
+    
   }
 
   .items img {
@@ -42,6 +53,12 @@ body {
   .item {
     border: 2px solid black;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    
   }
 
   .img {
@@ -51,27 +68,53 @@ body {
   .item p {
     font-size: 14px;
     font-family:Georgia, 'Times New Roman', Times, serif;
-
+    
   }
   .item p:nth-child(1) {
-    color: blue;
+    color: #337def;
   }
 
   .item p:nth-child(2) {
-    font-weight: bold;
-    color: blue;
+    font-weight: bolder;
+    color: #337def;
   }
 
   .item button {
     -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 14px;
-  -webkit-box-shadow: 0px 1px 3px #e80ee8;
-  -moz-box-shadow: 0px 1px 3px #e80ee8;
-  box-shadow: 0px 1px 3px #e80ee8;
-  font-family: Arial;
-  color: #eb11eb;
-  font-size: 10px;
-  padding: 8px;
-  text-decoration: none;
+    -moz-border-radius: 28;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 1px 3px #e80ee8;
+    -moz-box-shadow: 0px 1px 3px #e80ee8;
+    box-shadow: 0px 1px 3px #e80ee8;
+    font-family: Arial;
+    color: #eb11eb;
+    font-size: 10px;
+    padding: 8px;
+    text-decoration: none;
+    
+  }
+  .remove, .add-one, .remove-one, .update {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 1px 3px #e80ee8;
+    -moz-box-shadow: 0px 1px 3px #e80ee8;
+    box-shadow: 0px 1px 3px #e80ee8;
+    font-family: Arial;
+    color: #eb11eb;
+    font-size: 10px;
+    padding: 8px;
+    text-decoration: none;
+  }
+
+  footer {
+    background-color: #fcc729;
+    color: #e80ee8;
+    text-align: center;
+    list-style-type: none;
+   
+  }
+  
+  ul{
+  list-style-type: none;
   }

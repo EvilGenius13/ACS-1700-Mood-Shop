@@ -102,12 +102,12 @@ function showItems(item) {
 		//{name: 'Apple', price : 0.99, qty: 3}
 		const {name, price, qty} = cart[i]
 
-		itemStr += `<li>
+		itemStr += `<li id="cart-list">
 		${name} $${price} x ${qty} = ${qty * price} 
 		<button class="remove" data-name="${name}">Remove Item</button>
 		<button class="add-one" data-name="${name}"> + </button>
 		<button class="remove-one" data-name="${name}"> - </button>
-		<input class="update" type="number" date-name="${name}">
+		<input class="update" type="number" date-name="${name}" placeholder ="Quantity">
 		</li>`
 	}
 	itemList.innerHTML = itemStr
