@@ -39,7 +39,11 @@ for (let i = 0; i < data.length; i += 1) {
 	button.innerHTML = "Add to Cart"
 	newDiv.appendChild(button)
 }
-
+const all_items_button = Array.from(document.querySelectorAll("button"))
+all_items_button.forEach(elt => elt.addEventListener('click', () => {
+	addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+	showItems()
+  }))
 const cart = []
 // --------------------------------------------------
 // Add Item
@@ -115,16 +119,16 @@ function removeItem(name, qty = 0) {
 	}
 }
 
-addItem('Apple', 0.99)
-addItem('Orange', 1.29)
-addItem('Cucumber', 2.00)
-addItem('Raspberry', 1.25)
-addItem('Apple', 0.99)
-addItem('Apple', 0.99)
-addItem('Orange', 1.29)
+// addItem('Apple', 0.99)
+// addItem('Orange', 1.29)
+// addItem('Cucumber', 2.00)
+// addItem('Raspberry', 1.25)
+// addItem('Apple', 0.99)
+// addItem('Apple', 0.99)
+// addItem('Orange', 1.29)
 showItems()
 
-removeItem('Apple', 1)
-removeItem('Cucumber')
-removeItem('Orange', 2)
-showItems()
+// removeItem('Apple', 1)
+// removeItem('Cucumber')
+// removeItem('Orange', 2)
+// showItems()
