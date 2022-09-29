@@ -4,6 +4,7 @@ const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
 const cartTotal = document.getElementById('cart-total')
 
+const cart = []
 
 // the length of our data determines how many times this loop goes around
 for (let i = 0; i < data.length; i += 1) {
@@ -45,7 +46,7 @@ all_items_button.forEach(elt => elt.addEventListener('click', () => {
 	addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
 	showItems()
   }))
-const cart = []
+
 // --------------------------------------------------
 // Handle change events on update input
 itemList.onchange = function (e) {
@@ -108,7 +109,7 @@ function showItems(item) {
 		<button class="remove" data-name="${name}">Remove Item</button>
 		<button class="add-one" data-name="${name}"> + </button>
 		<button class="remove-one" data-name="${name}"> - </button>
-		<input class="update" type="number" date-name="${name}" placeholder ="Quantity">
+		<input class="update" type="number" data-name="${name}" placeholder ="Quantity">
 		</li>`
 	}
 	itemList.innerHTML = itemStr
