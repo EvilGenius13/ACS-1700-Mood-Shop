@@ -14,6 +14,7 @@ body {
   color: #337def;
   padding-left: 50px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .page-header ul {
@@ -40,7 +41,6 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1em;
-    background-color: #fcc729;
     color: #337def;
     
   }
@@ -58,7 +58,7 @@ body {
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    
+    background-color: #fcc729;
   }
 
   .img {
@@ -80,11 +80,7 @@ body {
   }
 
   .item button {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
     border-radius: 14px;
-    -webkit-box-shadow: 0px 1px 3px #e80ee8;
-    -moz-box-shadow: 0px 1px 3px #e80ee8;
     box-shadow: 0px 1px 3px #e80ee8;
     font-family: Arial;
     color: #eb11eb;
@@ -94,11 +90,7 @@ body {
     
   }
   .remove, .add-one, .remove-one, .update {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
     border-radius: 14px;
-    -webkit-box-shadow: 0px 1px 3px #e80ee8;
-    -moz-box-shadow: 0px 1px 3px #e80ee8;
     box-shadow: 0px 1px 3px #e80ee8;
     font-family: Arial;
     color: #eb11eb;
@@ -108,6 +100,7 @@ body {
   }
 
   footer {
+    margin-top: 10px;
     background-color: #fcc729;
     color: #e80ee8;
     text-align: center;
