@@ -3,8 +3,8 @@ const itemsContainer = document.querySelector('#items')
 const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
 const cartTotal = document.getElementById('cart-total')
-itemList.innerHTML = '<li> Hello World </li'
-console.log(itemList)
+
+
 // the length of our data determines how many times this loop goes around
 for (let i = 0; i < data.length; i += 1) {
 	// create a new div element and give it a class name
@@ -40,6 +40,7 @@ for (let i = 0; i < data.length; i += 1) {
 	newDiv.appendChild(button)
 }
 const all_items_button = Array.from(document.querySelectorAll("button"))
+
 all_items_button.forEach(elt => elt.addEventListener('click', () => {
 	addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
 	showItems()
@@ -49,7 +50,7 @@ const cart = []
 // Handle change events on update input
 itemList.onchange = function (e) {
 	if (e.target && e.target.classList.contains('update')) {
-		const name = e.target.dataset.name
+		const name = e.target.dataset.name;
 		const qty = parseInt(e.target.value)
 		updateCart(name, qty)
 	}
@@ -83,7 +84,7 @@ function addItem(name, price) {
 	
 	const item = {name, price, qty: 1}
 	cart.push(item)
-	showItems()
+	//showItems()
 }
 // ---------------------------------------------------
 // Show Items with variable added (const qty = getQty())
@@ -168,16 +169,5 @@ function updateCart(name, qty) {
 	}
 }
 // --------------------------------------------------------
-// addItem('Apple', 0.99)
-// addItem('Orange', 1.29)
-// addItem('Cucumber', 2.00)
-// addItem('Raspberry', 1.25)
-// addItem('Apple', 0.99)
-// addItem('Apple', 0.99)
-// addItem('Orange', 1.29)
-showItems()
 
-// removeItem('Apple', 1)
-// removeItem('Cucumber')
-// removeItem('Orange', 2)
-// showItems()
+showItems()
